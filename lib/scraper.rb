@@ -21,7 +21,7 @@ class Scraper
     end
 
     def make_courses
-      self.get_course.each do |post|
+      self.get_courses.each do |post|
         course = Course.new
         course.title = post.css("h2").text
         course.schedule = post.css(".date").text
@@ -40,6 +40,6 @@ class Scraper
       end
     end
 
-  Scraper.new.print_courses
-
 end
+
+Scraper.new.print_courses
